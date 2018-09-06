@@ -1,0 +1,22 @@
+<h1  class="header" > CRUD APP</h1>
+<div  style="background-color:gainsboro;" class ="form-group">
+Name<input  style="width: 50%;" class="form-control" type="text" placeholder=" name"   [(ngModel)]="name">
+age<input style="width: 50%;"class="form-control" type="text" placeholder=" age" [(ngModel)]="age">
+gender<input style="width: 50%;" class="form-control" type="text" placeholder=" gender" [(ngModel)]="gender">
+adress<input style="width: 50%;" class="form-control" type="text" placeholder=" address" [(ngModel)]="adress">
+</div> 
+<button  class="btn btn-primary"(click)="onAdd()" >Add</button>
+<!--<button class="btn btn-primary" (click)="onRead()"> Read</button>-->
+<button  class="btn btn-primary" (click)="onReadall()">Show all</button>
+<!--<button class="btn btn-primary" (click)="OnDelete(name)"> Delete</button>-->
+<button class="btn btn-primary" (click)="onUpdate()"> Update</button>
+<button class="btn btn-primary" (click)="onclear()">Clear field</button>
+
+<div  class="allusers" *ngIf="succes1"><span>USERS:</span>
+<span  *ngIf="succes1"> <button (click)="clicked1() "class="btn btn-warning"> <div class="btnwarn"> Edit</div></button></span>
+<div class="nfor" *ngFor="let x of list ;let i=index"> 
+<span> <h2 style="font-family: 'Abel', sans-serif;">{{x.name}}: {{x.age}} </h2> </span>
+ <span> <button id="Xbutton" class="btn btn-danger" *ngIf="Iclick" (click)="deletedata(i)" (click)="onReadall()"> X</button></span>
+ <span> <button class="btn btn-primary" *ngIf="Iclick" (click)="editdata(i)"> edit</button></span>
+</div>
+</div>

@@ -1,0 +1,27 @@
+.nfor{
+background-color:white;
+margin:10px;
+padding:0px;
+border: 1px solid;
+
+}
+
+.btnwarn{
+    color:black;
+    border:0px;
+    padding:0px;
+
+}
+.header{
+    background-color: black;color:white;padding:5px; border-bottom:0px;margin:0px;font-family: 'Kanit', sans-serif;
+
+}
+.form-group{
+    padding:15px;
+
+}
+.allusers{
+    padding:2px;
+    margin:5px;
+}
+

@@ -1,0 +1,73 @@
+table{
+    width:100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.mat-column-right{
+    text-align: center;
+}
+
+.searchbox1{
+    margin-bottom: 30px;
+}
+.searchbox0{
+    margin-bottom: 30px;
+}
+.searchbox1>input{
+    width:100px; 
+}
+
+.buttons2{
+margin-left:0px;
+display: inline-block;
+padding:10px;
+}
+.home{
+   
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-text-fill-color: white;
+    
+     background-color: rgba(0,0,0,.87);
+     color:white;
+
+}
+.cardhome{
+    background-color: transparent;
+    color: white;
+    text-decoration-line: white;
+    text-decoration-color: white;
+    font-family: 'Roboto', sans-serif;
+    text-emphasis-color: white;
+}
+th{
+    font-size:20px;
+}
+
+button:hover{
+  color:red
+}
+.header{
+    background-image: linear-gradient(#e91e63,#e91e63);
+    color:white;
+    font-family: 'Roboto', sans-serif;
+   
+  
+  
+   
+  }
+  .logouthead >button{
+      
+      background-color: transparent;
+      color:white;
+  }
+  .logouthead >button:hover{
+   color:black;
+  }
+  .logouthead{
+        margin-left:70%;
+  }
+
+ 

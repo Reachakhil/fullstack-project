@@ -1,0 +1,45 @@
+<div class="body1">
+    <!-- <div class="container"> -->
+    <mat-card [ngStyle]="{color:white}" class="home"> 
+        <h3>Register</h3>
+      <form [formGroup]="createForm" class="create-form">
+        <mat-form-field class="field-full-width">
+         
+          <input matInput placeholder="Name" formControlName="name" #name >
+          <!--<mat-error *ngIf="name.required">
+            Name is <strong>required</strong>
+          </mat-error>-->
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder="age" formControlName="age" #age>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <textarea matInput placeholder="address" formControlName="address" #address></textarea>
+        </mat-form-field>
+            <!-- <mat-form-field class="field-full-width"> -->
+                <!-- <input matInput placeholder="Gender" formControlName="gender" #gender> -->
+            <!-- <mat-select placeholder="gender"  formControlName="gender" #gender>
+              <mat-option value="male">male</mat-option>
+              <mat-option value="female">female</mat-option>
+              <mat-option value="others">others</mat-option>
+            </mat-select> -->
+            <mat-radio-group formControlName="gender" #gender>
+  <mat-radio-button value="male" >Male</mat-radio-button>
+   <mat-radio-button value="female" >Female </mat-radio-button> 
+</mat-radio-group>
+        <!-- </mat-form-field> -->
+        <mat-divider></mat-divider>
+        <br><br>
+      <button mat-raised-button matTooltip="All Users" color="accent" routerLink="/list"><i class="material-icons">
+          keyboard_arrow_left
+          </i></button>&nbsp;
+      <button type="submit"  matTooltip="Save Details"  (click)="addIssue()" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary"><i class="material-icons">
+          keyboard_arrow_right
+          </i>
+          
+          </button>
+   
+      </form>
+    </mat-card> 
+    <!-- </div> -->
+  </div>

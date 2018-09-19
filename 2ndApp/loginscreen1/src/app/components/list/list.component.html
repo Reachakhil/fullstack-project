@@ -1,0 +1,72 @@
+<mat-toolbar class="header"><h2 >User Log</h2> 
+ <div class="logouthead">Logout <button mat-flat-button	 matTooltip="Logout" color="pink" type="submit" (click)="logout()" ><i class="material-icons">
+      power_settings_new
+      </i></button></div>
+</mat-toolbar>
+<div class="home">
+<mat-card class="cardhome">
+     <section>
+       <div class ="buttons2">
+        <button mat-raised-button   matTooltip="Create a New User" color="primary" routerLink="/create"><i class="material-icons">
+          create
+          </i></button>
+        </div>
+        <div class="buttons2"> <div  class="searchbox0" *ngIf="search1"> 
+      <button mat-raised-button matTooltip="Search" color="primary" (click)="OnSearch()"> <i class="material-icons">search</i>
+      </button> </div><div  class="searchbox1" *ngIf="search2"> 
+          <mat-form-field>
+               <input matInput  [value]="searchit" type="text" [(ngModel)]="userFilter.name" placeholder="name">  
+            </mat-form-field>
+            <button   (click)="OnSearch()" mat-icon-button color="white1"><i class="material-icons">
+              clear
+              </i></button>
+        </div> </div>
+
+      
+    </section>  
+  
+   
+<div *ngIf="base"><table>
+  <tr>
+  <th>Name</th>
+  <th>Age</th>
+  <th>Gender</th>
+  <th>Actions</th>
+</tr>
+<tr  *ngFor="let x of issues | filterBy:userFilter | paginate: { itemsPerPage: 3, currentPage: p }" class="mat-column-right" >
+  <td> {{x.name}}</td>
+ 
+  <td >{{x.age}}</td>
+  
+  <td >{{x.gender}}</td>
+  <mat-divider></mat-divider>
+  <button  style="color:red" mat-button color="primary" (click)="editIssue(x._id)">Edit</button>
+  <button mat-button color="primary" (click)="deleteIssue(x._id)">Delete</button>
+ 
+</tr>
+</table>
+</div>
+<!-- <div *ngIf="!base"><table>
+    <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Actions</th>
+  </tr>
+  <tr  *ngFor="let x of issues | paginate: { itemsPerPage: 3, currentPage: p }" class="mat-column-right" >
+    <td> {{x.name}}</td>
+   
+    <td >{{x.age}}</td>
+    
+    <td >{{x.gender}}</td>
+    <mat-divider></mat-divider>
+    <button mat-button color="primary" (click)="editIssue(x._id)">Edit</button>
+    <button mat-button color="warn" (click)="deleteIssue(x._id)">Delete</button>
+   
+  </tr>
+  </table>
+  <button mat-fab (click)="goback()"> back</button>
+  </div> -->
+<pagination-controls (pageChange)="p = $event"></pagination-controls>   
+</mat-card>
+</div>

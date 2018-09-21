@@ -44,10 +44,12 @@ searchit:string;
   }
 
   deleteIssue(id) {
+    if (confirm("Are yo sure!")) {
     this.issueService.DeleteIssue(id).subscribe(() => {
       this.fetchIssues();
+    
     });
-  }
+  }}
   OnSearch(){
     this.search1=!this.search1;
     this.search2=!this.search2;

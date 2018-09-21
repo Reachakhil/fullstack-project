@@ -20,8 +20,8 @@ export class CreateComponent implements OnInit {
  
   constructor(private issueService: IssueService,private fb:FormBuilder,private router:Router) {
     this.createForm=this.fb.group({
-      name:['',[Validators.required,Validators.maxLength(15)]],
-      age:['',[Validators.pattern('^0*(?:[1-9][0-9]?|125)$'),Validators.required]],
+      name:['',[Validators.required,Validators.pattern("^[a-zA-Z \s]*$"),Validators.maxLength(15)]],
+      age:['',[Validators.pattern('^(0?[1-9]|[1-9][0-9])$'),Validators.required]],
       address: '',
       gender:''
     });

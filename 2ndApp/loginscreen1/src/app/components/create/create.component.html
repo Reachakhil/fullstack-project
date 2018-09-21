@@ -6,12 +6,16 @@
         <mat-form-field class="field-full-width">
          
           <input matInput placeholder="Name" formControlName="name" #name >
-          <!--<mat-error *ngIf="name.required">
-            Name is <strong>required</strong>
-          </mat-error>-->
+             <mat-error>
+          Give a correct Name
+          </mat-error>
+         
         </mat-form-field>
         <mat-form-field class="field-full-width">
           <input matInput placeholder="age" formControlName="age" #age>
+          <mat-error>
+            Give a correct Age
+            </mat-error>
         </mat-form-field>
         <mat-form-field class="field-full-width">
           <textarea matInput placeholder="address" formControlName="address" #address></textarea>
@@ -24,7 +28,7 @@
               <mat-option value="others">others</mat-option>
             </mat-select> -->
             <mat-radio-group formControlName="gender" #gender>
-  <mat-radio-button value="male" >Male</mat-radio-button>
+  <mat-radio-button value="male"  checked="checked">Male</mat-radio-button>
    <mat-radio-button value="female" >Female </mat-radio-button> 
 </mat-radio-group>
         <!-- </mat-form-field> -->

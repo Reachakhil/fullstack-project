@@ -1,0 +1,58 @@
+<mat-toolbar class="header"><h2 >User Log</h2></mat-toolbar>
+<div class="back"><button  class="back" mat-raised-button matTooltip="All Users" color="primary" routerLink="/list"><i class="material-icons">
+    keyboard_backspace
+    </i>
+</button>&nbsp;</div>
+<div class="body1">
+    
+    <!-- <div class="container"> -->
+      
+    <mat-card  class="home"> 
+      
+        <h3>Register</h3> 
+      <form [formGroup]="createForm" class="create-form">
+        <mat-form-field class="my-form-field">
+         
+          <input matInput placeholder="Name" formControlName="name" #name >
+          <!--<mat-error *ngIf="name.required">
+            Name is <strong>required</strong>
+          </mat-error>-->
+          <mat-error>
+          Give a correct Name
+          </mat-error>
+
+        </mat-form-field>
+        <mat-form-field class="my-form-field">
+          <input matInput  type="number" placeholder="age" formControlName="age" #age>
+          <mat-error>
+            Give correct Age
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="my-form-field">
+          <input matInput placeholder="address" formControlName="address" #address>
+        </mat-form-field>
+            <!-- <mat-form-field class="field-full-width"> -->
+                <!-- <input matInput placeholder="Gender" formControlName="gender" #gender> -->
+            <!-- <mat-select placeholder="gender"  formControlName="gender" #gender>
+              <mat-option value="male">male</mat-option>
+              <mat-option value="female">female</mat-option>
+              <mat-option value="others">others</mat-option>
+            </mat-select> -->
+            <mat-radio-group formControlName="gender" #gender>
+  <mat-radio-button class="radio"  value="male" >Male</mat-radio-button>
+   <mat-radio-button class="radio"  value="female" >Female </mat-radio-button> 
+</mat-radio-group>
+<br><br>
+<div class="upload-btn-wrapper">
+    <button class="btn">Upload a file</button>
+    <input size="60" type="file" (change)="onFileChanged($event)"  formControlName="productImage" #productImage>
+  </div>
+        <mat-divider></mat-divider>
+        <br><br>
+      
+      <button style="font-size:20px" type="submit"  matTooltip="Save Details"  (click)="addIssue()" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save
+          </button>
+      </form>
+    </mat-card> 
+    <!-- </div> -->
+  </div>
